@@ -13,6 +13,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     var tweets: [Tweet]?
     var refreshControl: UIRefreshControl!
 
+    @IBOutlet weak var loadingView: UIActivityIndicatorView!
     @IBOutlet weak var tweetsTableView: UITableView!
 
     override func viewDidLoad() {
@@ -28,12 +29,16 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         tweetsTableView.rowHeight = UITableViewAutomaticDimension
         tweetsTableView.estimatedRowHeight = 200
 
+        loadingView.stopAnimating()
+
         // Do any additional setup after loading the view.
         TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion: { (tweets, error) -> () in
             if let tweets = tweets {
                 self.tweets = tweets
                 self.tweetsTableView.reloadData()
-                self.tweetsTableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, self.tweetsTableView.numberOfSections())), withRowAnimation: .None)
+                // self.tweetsTableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, self.tweetsTableView.numberOfSections())), withRowAnimation: .None)
+            } else {
+                println("\(error)")
             }
         })
     }
@@ -78,6 +83,26 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let len = self.tweets!.count
+        if len > 0 && indexPath.row == len - 1 {
+            println("\(indexPath.row) \(len)")
+            loadingView.startAnimating()
+            var params = ["max_id": self.tweets![len - 1].id!, "count": 20]
+            TwitterClient.sharedInstance.homeTimelineWithParams(params, completion: { (tweets, error) -> () in
+                if let tweets = tweets {
+                    println("\(tweets.count)")
+                    self.tweets! += tweets
+                    self.tweetsTableView.reloadData()
+                    // self.tweetsTableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, self.tweetsTableView.numberOfSections())), withRowAnimation: .None)
+                    self.delay(1, closure: {
+                        self.loadingView.stopAnimating()
+                    })
+                } else {
+                    println("\(error)")
+                }
+            })
+        }
+
         var cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetTableViewCell
         let tweet = tweets![indexPath.row]
         if let user = tweet.user {
@@ -86,6 +111,8 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             cell.userHandleLabel.text = "@\(user.screenName!)"
         }
         cell.tweetLabel.text = tweet.text
+        cell.createdAtLabel.text = tweet.createdAtString
+
         if tweet.retweeted! {
             cell.retweetButton.setImage(UIImage(named: "retweet_on.png"), forState: .Normal)
         }

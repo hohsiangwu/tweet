@@ -53,11 +53,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Jtk-Vw-9xc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Jtk-Vw-9xc">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="140" id="JQb-Dr-GuM" customClass="TweetTableViewCell" customModule="tweet" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="160" id="JQb-Dr-GuM" customClass="TweetTableViewCell" customModule="tweet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JQb-Dr-GuM" id="jfq-78-LOz">
@@ -139,12 +139,16 @@
                                                         <segue destination="plU-eo-nXI" kind="push" id="OeH-fS-lCN"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon May 04 12:03:24 +0000 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9F-JC-6do">
+                                                    <rect key="frame" x="8" y="132" width="191" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="GfF-GE-roe" firstAttribute="leading" secondItem="g7M-VE-T5Y" secondAttribute="trailing" constant="2" id="5RB-1m-Adh"/>
                                                 <constraint firstItem="Mwe-qo-CvV" firstAttribute="baseline" secondItem="PJS-XX-YS2" secondAttribute="baseline" id="7PE-BQ-0Nr"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="y4G-Z7-vXf" secondAttribute="bottom" constant="8" id="8Zz-iv-wfP"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="g7M-VE-T5Y" secondAttribute="bottom" constant="8" id="C5t-fK-CDv"/>
                                                 <constraint firstItem="g7M-VE-T5Y" firstAttribute="leading" secondItem="y4G-Z7-vXf" secondAttribute="trailing" constant="8" id="G23-lP-wTa"/>
                                                 <constraint firstItem="y4G-Z7-vXf" firstAttribute="centerY" secondItem="PJS-XX-YS2" secondAttribute="centerY" id="Gbc-KL-AYq"/>
                                                 <constraint firstItem="PJS-XX-YS2" firstAttribute="leading" secondItem="GfF-GE-roe" secondAttribute="trailing" constant="8" id="HEz-hY-gSC"/>
@@ -152,23 +156,29 @@
                                                 <constraint firstItem="y4G-Z7-vXf" firstAttribute="baseline" secondItem="g7M-VE-T5Y" secondAttribute="baseline" id="ILS-Un-cur"/>
                                                 <constraint firstAttribute="trailing" secondItem="ejW-lh-a1X" secondAttribute="trailing" constant="8" id="IvA-Ym-y7E"/>
                                                 <constraint firstItem="y4G-Z7-vXf" firstAttribute="leading" secondItem="jfq-78-LOz" secondAttribute="leading" constant="8" id="LR9-nz-xPn"/>
+                                                <constraint firstItem="l9F-JC-6do" firstAttribute="top" secondItem="g7M-VE-T5Y" secondAttribute="bottom" constant="8" id="LeS-2t-hC1"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="l9F-JC-6do" secondAttribute="bottom" constant="8" id="Llh-KX-UOP"/>
                                                 <constraint firstItem="GfF-GE-roe" firstAttribute="baseline" secondItem="g7M-VE-T5Y" secondAttribute="baseline" id="N9O-G6-GB8"/>
                                                 <constraint firstItem="PJS-XX-YS2" firstAttribute="top" secondItem="ejW-lh-a1X" secondAttribute="bottom" constant="8" id="ORi-Nj-qEg"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Mwe-qo-CvV" secondAttribute="trailing" constant="8" id="VNG-Jp-G4n"/>
                                                 <constraint firstItem="y4G-Z7-vXf" firstAttribute="centerY" secondItem="g7M-VE-T5Y" secondAttribute="centerY" id="Xc3-u5-flf"/>
+                                                <constraint firstItem="l9F-JC-6do" firstAttribute="leading" secondItem="jfq-78-LOz" secondAttribute="leading" constant="8" id="ZjB-OH-7U3"/>
                                                 <constraint firstItem="yHt-8r-C6c" firstAttribute="top" secondItem="jfq-78-LOz" secondAttribute="top" constant="8" id="c6N-ni-NC6"/>
                                                 <constraint firstItem="ZvR-el-TJT" firstAttribute="leading" secondItem="yHt-8r-C6c" secondAttribute="trailing" constant="8" id="cLn-Il-jUo"/>
                                                 <constraint firstItem="yKp-6k-CbN" firstAttribute="leading" secondItem="jfq-78-LOz" secondAttribute="leading" constant="8" id="dz2-Ad-h4E"/>
                                                 <constraint firstItem="yKp-6k-CbN" firstAttribute="top" secondItem="jfq-78-LOz" secondAttribute="top" constant="8" id="hBF-bY-TqQ"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZvR-el-TJT" secondAttribute="trailing" constant="8" id="hO6-CA-h65"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="l9F-JC-6do" secondAttribute="trailing" constant="8" id="jxE-r3-dRn"/>
                                                 <constraint firstItem="yHt-8r-C6c" firstAttribute="leading" secondItem="yKp-6k-CbN" secondAttribute="trailing" constant="8" id="kDL-bP-iih"/>
                                                 <constraint firstItem="Mwe-qo-CvV" firstAttribute="leading" secondItem="PJS-XX-YS2" secondAttribute="trailing" constant="2" id="kPQ-90-K2G"/>
                                                 <constraint firstItem="ZvR-el-TJT" firstAttribute="baseline" secondItem="yHt-8r-C6c" secondAttribute="baseline" id="ovl-WY-72D"/>
+                                                <constraint firstItem="l9F-JC-6do" firstAttribute="top" secondItem="PJS-XX-YS2" secondAttribute="bottom" constant="8" id="qHt-bO-LaZ"/>
+                                                <constraint firstItem="l9F-JC-6do" firstAttribute="top" secondItem="y4G-Z7-vXf" secondAttribute="bottom" constant="8" id="tHy-eO-bcP"/>
                                                 <constraint firstItem="ejW-lh-a1X" firstAttribute="leading" secondItem="yKp-6k-CbN" secondAttribute="trailing" constant="8" id="wEw-yV-0Ml"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="PJS-XX-YS2" secondAttribute="bottom" constant="8" id="wrd-2Q-gq2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="createdAtLabel" destination="l9F-JC-6do" id="Zlt-by-6BX"/>
                                             <outlet property="favoriteButton" destination="PJS-XX-YS2" id="bHX-mE-6Zz"/>
                                             <outlet property="favoriteCountLabel" destination="Mwe-qo-CvV" id="Upz-8F-Xfs"/>
                                             <outlet property="retweetButton" destination="g7M-VE-T5Y" id="IeE-td-9Ip"/>
@@ -182,11 +192,16 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Asd-1S-cms">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Asd-1S-cms" secondAttribute="centerX" id="FsJ-mc-5Wr"/>
                             <constraint firstItem="Jtk-Vw-9xc" firstAttribute="leading" secondItem="1tN-0G-JhS" secondAttribute="leading" id="L1c-FX-fYJ"/>
                             <constraint firstItem="tGI-cK-XNf" firstAttribute="top" secondItem="Jtk-Vw-9xc" secondAttribute="bottom" id="Mhs-fG-aMP"/>
+                            <constraint firstAttribute="centerY" secondItem="Asd-1S-cms" secondAttribute="centerY" id="jFo-CO-HWI"/>
                             <constraint firstAttribute="trailing" secondItem="Jtk-Vw-9xc" secondAttribute="trailing" id="n48-VI-jj0"/>
                             <constraint firstItem="Jtk-Vw-9xc" firstAttribute="top" secondItem="1tN-0G-JhS" secondAttribute="top" id="wff-tI-gga"/>
                         </constraints>
@@ -204,6 +219,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="loadingView" destination="Asd-1S-cms" id="CKe-cB-29K"/>
                         <outlet property="tweetsTableView" destination="Jtk-Vw-9xc" id="ECb-Wm-60K"/>
                     </connections>
                 </viewController>
