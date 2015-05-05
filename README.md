@@ -28,5 +28,5 @@ Time spent: 13
 
 ### Walkthrough
 
-![Video Walkthrough](...)
+![Video Walkthrough](https://github.com/hohsiangwu/tweet/blob/master/tweet.gif)
 
